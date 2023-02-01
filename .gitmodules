@@ -1,0 +1,9 @@
+[submodule "lib/RGB-matrix-Panel"]
+	path = lib/RGB-matrix-Panel
+	url = git@github.com:adafruit/RGB-matrix-Panel.git
+[submodule "lib/Adafruit-GFX-Library"]
+	path = lib/Adafruit-GFX-Library
+	url = git@github.com:adafruit/Adafruit-GFX-Library.git
+[submodule "lib/Adafruit_BusIO"]
+	path = lib/Adafruit_BusIO
+	url = git@github.com:adafruit/Adafruit_BusIO.git
