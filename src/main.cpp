@@ -38,7 +38,6 @@ void setup() {
   uint16_t c;
 
   // abc
-  // abc
 
   matrix.begin();
 
