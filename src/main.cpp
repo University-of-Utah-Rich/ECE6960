@@ -37,6 +37,8 @@ void setup() {
   uint8_t  sat, val;
   uint16_t c;
 
+  // abc
+
   matrix.begin();
 
   for(y=0; y < matrix.width(); y++) {
