@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/inc",
-                "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/src",
+                "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/Inc",
+                "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/Src",
                 "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/CMSIS/Include",
                 "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
                 "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Inc",
@@ -45,8 +45,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/inc",
-                    "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/src",
+                    "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/Inc",
+                    "/home/rich/Documents/PlatformIO/Projects/LED_Matrix/Src",
                     "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/CMSIS/Include",
                     "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/CMSIS/Device/ST/STM32F0xx/Include",
                     "/home/rich/.platformio/packages/framework-stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Inc",
