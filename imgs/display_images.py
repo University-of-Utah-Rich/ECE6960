@@ -49,22 +49,35 @@ def compute_checksum(img_bytes):
 # stream_img_to_serial streams an image to a serial port
 # The image is converted to a list of bytes and sent to the device
 # The format of the data is as follows:
-# 4 bytes: 0xFFAA AAFF (start of frame)
+# 4 bytes: 0xAAAA 0xAAAA (start of frame)
 # 4 bytes: size of image in little endian format
 # size bytes: image bytes in little endian format
 # 2 bytes: checksum of image bytes in little endian format
-# 4 bytes: 0xAAFF FFAA (end of frame)
+# 4 bytes: ~(0xAAAA 0xAAAA) (end of frame)
+# The checksum is the sum of all bytes in the image truncated to 16 bits
+# The full packet is sent in chunks of 8 bytes
 
 def stream_img_to_serial(img, ser):
+    # Define the packet format and chunk size
+    # Done this way to make it easier to change the format
+    start_frame = 0xAAAAAAAA
+    end_frame = 0xAAABAAAB
+    chunk_size = 8
+
     # Convert image to a list of bytes
     img_bytes = img.tobytes()
-    # Send the number of bytes to the device
+    # get the size of the image in bytes
     size = len(img_bytes)
-    # Send the image bytes to the device in little endian format
+    # Pack the data into a byte string
     # Note the < in the format string indicates little endian
-    b = struct.pack("<HHIpHHH", 0xFFAA, 0xAAFF, size, img_bytes,
-                    compute_checksum(img_bytes), 0xAAFF, 0xFFAA)
-    ser.write(b)
+    b = struct.pack("<II", start_frame, size)
+    b += img_bytes
+    b += struct.pack("<HI", compute_checksum(img_bytes), end_frame)
+    
+    # send b to the device in chunks of chunk_size
+    for i in range(0, len(b), chunk_size):
+        ser.write(b[i:i+chunk_size])
+        ser.flush()
 
 
 # main function for the program
