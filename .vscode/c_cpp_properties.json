@@ -83,6 +83,9 @@
             "defines": [
                 "PLATFORMIO=60106",
                 "STM32F072xB",
+                "DBG",
+                "NULL=0",
+                "USE_FULL_ASSERT",
                 "USE_HAL_DRIVER",
                 "F_CPU=48000000L",
                 ""
